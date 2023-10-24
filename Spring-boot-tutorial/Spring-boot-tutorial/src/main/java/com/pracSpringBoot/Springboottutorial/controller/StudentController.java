@@ -30,6 +30,18 @@ public class StudentController {
         return service.fetchStudentListByID(studentID);
     }
 
+    @GetMapping("/details/name/{name}")
+    public StudentDetails fetchDetailsByName(@PathVariable("name") String studentName){
+
+        return service.fetchDetialsByName(studentName);
+
+    }
+
+    @GetMapping("/details/roll/{rollNo}")
+    public StudentDetails fetchStudentDetailsByRollNo(@PathVariable("rollNo")Long studentRollNo){
+
+        return service.fetchDetailsByRollNo(studentRollNo);
+    }
     @DeleteMapping("/details/{id}")
     public String deleteStudentDetailsByID(@PathVariable("id")Long studentID){
 
@@ -44,15 +56,5 @@ public class StudentController {
         return "Value Updated Successfully!!";
     }
 
-    @GetMapping("/details/name/{name}")
-    public StudentDetails fetchDetailsByName(@PathVariable("name") String studentName){
-
-        return service.fetchDetialsByName(studentName);
-
-    }
-
-    //End of APIs
-
-
-
+    //End Of APIs
 }
