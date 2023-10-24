@@ -44,11 +44,13 @@ public class StudentServiceImp implements StudentService {
             detDB.setStudentName(details.getStudentName());
         }
 
-//        if (Objects.nonNull(details.getStudentRollNo())&&!"".equalsIgnoreCase(details.getStudentRollNo())){
-//            detDB.setStudentRollNo(details.getStudentRollNo());
-//        }
+        if (Objects.nonNull(details.getDepartment())&&!"".equalsIgnoreCase(details.getDepartment())){
+            detDB.setDepartment(details.getDepartment());
+        }
 
-
+        if (Objects.nonNull(details.getPlaceOfResidence())&&!"".equalsIgnoreCase(details.getPlaceOfResidence())){
+            detDB.setPlaceOfResidence(details.getPlaceOfResidence());
+        }
 
         return studentRepository.save(detDB);
     }
@@ -60,8 +62,11 @@ public class StudentServiceImp implements StudentService {
 
     }
 
+    @Override
+    public StudentDetails fetchDetailsByRollNo(Long studentRollNo) {
+        return studentRepository.findByStudentRollNo(studentRollNo);           //there is no such method in repository called as find by rollno so we have to create one in the repository
 
-
-
+    }
+    
 }
 
