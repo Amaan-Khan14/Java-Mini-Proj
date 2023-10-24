@@ -13,10 +13,12 @@ public interface StudentService {
 
      public StudentDetails fetchStudentListByID(Long studentID);
 
-
      public void deleteStudentDetialsByID(Long studentID);
+     
      public StudentDetails updateStudentDetailsByID(Long studentID, StudentDetails details);
 
      public StudentDetails fetchDetialsByName(String studentName);
+
+     public StudentDetails fetchDetailsByRollNo(Long studentRollNo);
 
 }
