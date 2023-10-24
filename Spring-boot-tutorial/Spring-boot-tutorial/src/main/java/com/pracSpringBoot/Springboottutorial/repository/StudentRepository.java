@@ -11,5 +11,5 @@ public interface StudentRepository extends JpaRepository<StudentDetails,Long> {
 
     public StudentDetails findByStudentNameIgnoreCase(String studentName);
 
-
+    public StudentDetails findByStudentRollNo(long studentRollNo);
 }
